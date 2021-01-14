@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+    int n,x;
+    printf("Enter the number of elements in array : \n");
+    scanf("%d",&n);
+
+    int array[n];
+    printf("Enter the elements\n");
+    for(int i =0; i < n;i++){
+        scanf("%d",&array[i]);
+    }
+    for(int i = 0; i < n;i++){
+        for(int j = i; j<n;j++){
+            if(array[i]>array[j]){
+                x = array[i];
+                array[i]=array[j];
+                array[j]=x;
+            }
+        }
+    }
+    printf("Given numbers in ascending order\n");
+    for(int i =0; i < n;i++){
+        printf("%d\t",array[i]);
+    }
+    printf("\n");
+    printf("Given numbers in descending order\n");
+    for(int i =n-1; i >=0;i--){
+        printf("%d\t",array[i]);
+    }
+}
